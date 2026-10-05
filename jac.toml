@@ -1,0 +1,54 @@
+[project]
+name = "student-planner"
+version = "1.0.0"
+default-app = "web"
+jac-version = "==0.37.23"
+
+[apps.web]
+kind = "web-app"
+entry-point = "web.main"
+
+[apps.planner]
+kind = "service"
+entry-point = "core.service"
+
+[apps.mobile]
+kind = "mobile"
+entry-point = "mobile.main"
+
+[apps.cli]
+kind = "cli"
+entry-point = "cli.main"
+
+[serve]
+host = "0.0.0.0"
+port = 8000
+
+[test]
+directories = ["planner_tests"]
+
+[client.app_meta_data]
+title = "Student Planner"
+description = "Make room for what matters. Coursework, research, applications and life."
+author = "Lianjie Yuan"
+theme_color = "#164e44"
+
+[dependencies.npm]
+react-native-web = "0.21.2"
+react = "19.3.0"
+react-dom = "19.3.0"
+react-router-dom = "6.30.6"
+react-error-boundary = "5.0.0"
+"@tanstack/react-form" = "1.33.5"
+zod = "4.6.5"
+vite = "6.4.3"
+"@vitejs/plugin-react" = "4.7.0"
+typescript = "5.9.3"
+"@types/react" = "19.3.0"
+"@types/react-dom" = "19.3.0"
+
+[dependencies]
+python-dotenv = "==1.2.4"
+
+[client]
+debug = false
